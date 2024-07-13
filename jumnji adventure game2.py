@@ -6,7 +6,7 @@ max_turns = 10
 current_turn = 1
 
 
-def print_pause(message, delay=0.5):
+def print_pause(message, delay=.5):
     print(message)
     time.sleep(delay)
 
@@ -14,7 +14,7 @@ def print_pause(message, delay=0.5):
 def update_score(points):
     global total_score
     total_score += points
-    print_pause('Your current score is: {}'.format(total_score), 0.5)
+    print_pause('Your current score is: {}'.format(total_score),.5)
 
 
 def start_game():
@@ -22,18 +22,18 @@ def start_game():
     total_score = 0
     current_turn = 1
 
-    print_pause('Welcome to the Jumanji Adventure!', 0.5)
+    print_pause('Welcome to the Jumanji Adventure!',.5)
     print_pause(
         'You and your friends find an old game called "Jumanji" in an old '
-        'room at the school.', 0.5)
+        'room at the school.',.5)
     print_pause(
         'Once you start playing, you are transported to a mysterious jungle '
-        'filled with wild animals and unknown dangers.', 0.5)
+        'filled with wild animals and unknown dangers.',.5)
     print_pause(
         'You need to make smart decisions to survive and escape the game. '
-        'Your goal is to find the magical jewel and return home.', 0.5)
+        'Your goal is to find the magical jewel and return home.',.5)
     print_pause(
-        'Be aware of the traps and challenges that await you. Good luck!', 0.5)
+        'Be aware of the traps and challenges that await you. Good luck!',.5)
 
     first_choice()
 
@@ -44,13 +44,13 @@ def first_choice():
     while True:
         print_pause(
             '\nYou come across a fork in the road in the jungle. The thick '
-            'trees loom overhead, casting eerie shadows on the path.', 0.5)
+            'trees loom overhead, casting eerie shadows on the path.',.5)
         print_pause(
             '1: Follow the path to the dark cave, rumored to be haunted by '
-            'ancient spirits.', 0.5)
+            'ancient spirits.',.5)
         print_pause(
             '2: Take the path leading to the roaring river, known for its '
-            'treacherous currents.', 0.5)
+            'treacherous currents.',.5)
         choice = input('Enter 1 or 2: ')
 
         if choice == '1':
@@ -60,7 +60,7 @@ def first_choice():
             roaring_river()
             break
         else:
-            print_pause('Invalid choice, please enter 1 or 2.', 0.5)
+            print_pause('Invalid choice, please enter 1 or 2.',.5)
 
 
 def dark_cave():
@@ -70,38 +70,38 @@ def dark_cave():
         print_pause(
             '\nYou cautiously enter the dark cave. The air is cold and damp, '
             'and you hear the sound of dripping water echoing through the '
-            'cavern.', 0.5)
+            'cavern.',.5)
         print_pause(
-            '1: Investigate the noises, hoping to find something valuable.', 0.5)
+            '1: Investigate the noises,hoping to find something valuable.',.5)
         print_pause(
             '2: Quickly exit the cave, fearing what might be lurking in the '
-            'shadows.', 0.5)
+            'shadows.',.5)
         choice = input('Enter 1 or 2: ')
 
         if choice == '1':
             if random.choices([True, False], weights=[60, 40])[0]:
                 print_pause(
                     'You discover a hidden treasure guarded by friendly '
-                    'creatures! They give you the magical jewel.', 0.5)
-                print_pause('You can now return home.', 0.5)
+                    'creatures! They give you the magical jewel.',.5)
+                print_pause('You can now return home.',.5)
                 update_score(50)
                 end_game(True)
             else:
                 print_pause(
                     'A wild animal appears and you barely escape with your '
-                    'life!', 0.5)
+                    'life!',.5)
                 update_score(-10)
                 second_choice()
             break
         elif choice == '2':
             print_pause(
                 'You safely exit the cave and continue your journey, but the '
-                'memory of the dark cave will stay in your mind.', 0.5)
+                'memory of the dark cave will stay in your mind.',.5)
             update_score(0)
             second_choice()
             break
         else:
-            print_pause('Invalid choice, please enter 1 or 2.', 0.5)
+            print_pause('Invalid choice, please enter 1 or 2.',.5)
 
 
 def roaring_river():
@@ -110,11 +110,11 @@ def roaring_river():
     while True:
         print_pause(
             '\nYou arrive at the roaring river. The water is turbulent and '
-            'fast-moving, with sharp rocks jutting out along the riverbank.', 0.5)
+            'fast-moving, with sharp rocks jutting out along the riverbank.',.5)
         print_pause(
-            '1: Use the raft to cross the river, risking the swift current.', 0.5)
+            '1: Use the raft to cross the river, risking the swift current.',.5)
         print_pause(
-            '2: Follow the riverbank on foot, looking for a safer crossing.', 0.5)
+            '2: Follow the riverbank on foot, looking for a safer crossing.',.5)
         choice = input('Enter 1 or 2: ')
 
         if choice == '1':
@@ -128,19 +128,19 @@ def roaring_river():
             else:
                 print_pause(
                     'The raft overturns, and you struggle to stay afloat. You '
-                    'manage to grab on to a rock and pull yourself to safety.', 0.5)
+                    'manage to grab on to a rock and pull yourself to safety.',.5)
                 update_score(-20)
                 end_game(False)
             break
         elif choice == '2':
             print_pause(
                 'You find a safe path along the riverbank. The sound of the '
-                'rushing water is calming, and you make steady progress.', 0.5)
+                'rushing water is calming, and you make steady progress.',.5)
             update_score(10)
             second_choice()
             break
         else:
-            print_pause('Invalid choice, please enter 1 or 2.', 0.5)
+            print_pause('Invalid choice, please enter 1 or 2.',.5)
 
 
 def second_choice():
@@ -149,19 +149,19 @@ def second_choice():
     while True:
         print_pause(
             '\nYou find a small village in the middle of the jungle. The '
-            'villagers are wary of strangers but seem willing to help.', 0.5)
+            'villagers are wary of strangers but seem willing to help.',.5)
         print_pause(
             '1: Enter the village to ask for help. The village elder might '
-            'have useful information.', 0.5)
+            'have useful information.',.5)
         print_pause(
-            '2: Continue through the jungle safely, trusting your instincts.', 0.5)
+            '2:Continue through the jungle safely,trusting your instincts.',.5)
         choice = input('Enter 1 or 2: ')
 
         if choice == '1':
             print_pause(
                 'The villagers welcome you and offer you food and rest. The '
                 'village elder tells you stories of the magical jewel and the '
-                'monsters that guard it.', 0.5)
+                'monsters that guard it.',.5)
             update_score(15)
             third_choice()
             break
@@ -169,18 +169,18 @@ def second_choice():
             if random.choices([True, False], weights=[60, 40])[0]:
                 print_pause(
                     'You get lost in the dense jungle. The underbrush is thick '
-                    'and difficult to navigate.', 0.5)
+                    'and difficult to navigate.',.5)
                 update_score(-30)
                 end_game(False)
             else:
                 print_pause(
                     'You stumble upon the magical jewel in the jungle! It '
-                    'glows with a mystical light.', 0.5)
+                    'glows with a mystical light.',.5)
                 update_score(40)
                 end_game(True)
             break
         else:
-            print_pause('Invalid choice, please enter 1 or 2.', 0.5)
+            print_pause('Invalid choice, please enter 1 or 2.',.5)
 
 
 def third_choice():
@@ -189,13 +189,13 @@ def third_choice():
     while True:
         print_pause(
             '\nWhile exploring the village, you are confronted by a large army '
-            'of wolves. Their eyes glimmer under the moonlight.', 0.5)
+            'of wolves. Their eyes glimmer under the moonlight.',.5)
         print_pause(
             '1: Gather your strength and fight the wolves with your friends, '
-            'using whatever you can find as weapons.', 0.5)
+            'using whatever you can find as weapons.',.5)
         print_pause(
             '2: Accept your fate and live the rest of your life in the jungle, '
-            'hoping to avoid further dangers.', 0.5)
+            'hoping to avoid further dangers.',.5)
         choice = input('Enter 1 or 2: ')
 
         if choice == '1':
@@ -203,15 +203,15 @@ def third_choice():
                 print_pause(
                     'You and your friends bravely fight the wolves and emerge '
                     'victorious. Among the wolves\' den, you find the magical '
-                    'jewel.', 0.5)
+                    'jewel.',.5)
                 print_pause(
-                    'You can now return home finally! Congratulations.', 0.5)
+                    'You can now return home finally! Congratulations.',.5)
                 update_score(60)
                 end_game(True)
             else:
                 print_pause(
                     'Despite your efforts, the wolves overpower you. You are '
-                    'forced to retreat and live in the jungle.', 0.5)
+                    'forced to retreat and live in the jungle.',.5)
                 update_score(-20)
                 end_game(False)
             break
@@ -219,36 +219,34 @@ def third_choice():
             print_pause(
                 'You accept your fate and decide to live peacefully in the '
                 'jungle. The villagers occasionally bring you supplies, and '
-                'you learn to survive.', 0.5)
+                'you learn to survive.',.5)
             update_score(-10)
             end_game(False)
             break
         else:
-            print_pause('Invalid choice, please enter 1 or 2.', 0.5)
+            print_pause('Invalid choice, please enter 1 or 2.',.5)
 
 
 def end_game(won):
     global current_turn
 
-    delay = 0.5
-
     if won:
         print_pause(
-            '\nCongratulations, you won the game and found the magical jewel!', delay)
+            '\nCongratulations, you won the game and found the magical jewel!',.5)
         if total_score >= 100:
-            print_pause('You\'ve achieved an excellent score!', delay)
+            print_pause('You\'ve achieved an excellent score!',.5)
         else:
-            print_pause('You did well but could have scored higher.', delay)
+            print_pause('You did well but could have scored higher.',.5)
     else:
         print_pause(
             '\nGame over. You were unable to find the jewel and are stuck in '
-            'Jumanji.', delay)
+            'Jumanji.',.5)
         if total_score <= 0:
             print_pause(
-                'Your score has dropped to zero. Returning to the start of the game.', delay)
+                'Your score has dropped to zero. Returning to the start of the game.',.5)
             start_game()
         else:
-            print_pause('Try again to improve your score.', delay)
+            print_pause('Try again to improve your score.',.5)
 
     while True:
         play_again = input('\nWould you like to play again? (yes/no): ').lower()
@@ -256,10 +254,10 @@ def end_game(won):
             start_game()
             break
         elif play_again == 'no':
-            print_pause('Thank you for playing Jumanji Adventure!', delay)
+            print_pause('Thank you for playing Jumanji Adventure!',.5)
             break
         else:
-            print_pause('Invalid choice, please enter "yes" or "no".', delay)
+            print_pause('Invalid choice, please enter "yes" or "no".',.5)
 
 
 start_game()
