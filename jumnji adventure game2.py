@@ -6,7 +6,7 @@ max_turns = 10
 current_turn = 1
 
 
-def print_pause(message, delay=1):
+def print_pause(message, delay=0.5):
     print(message)
     time.sleep(delay)
 
@@ -256,10 +256,10 @@ def end_game(won):
             start_game()
             break
         elif play_again == 'no':
-            print_pause('Thanks for playing Jumanji Adventure! Goodbye!', delay)
+            print_pause('Thank you for playing Jumanji Adventure!', delay)
             break
         else:
-            print_pause('Invalid choice, please enter yes or no.', delay)
+            print_pause('Invalid choice, please enter "yes" or "no".', delay)
 
 
 start_game()
